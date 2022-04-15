@@ -1,7 +1,19 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
 .App {
   width: 100vw;
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: darkorchid;
   justify-content: center;
   align-items: center;
 }

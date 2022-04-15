@@ -1,9 +1,16 @@
 import "./styles/App.css";
+import React from "react";
+import Navbar from "./components/Nav";
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <>
+      <Navbar></Navbar>
+      <div className="App"></div>
+      <div className="App"></div>
+      <div className="App"></div>
+      <div className="App"></div>
+      <div className="main"></div>
+    </>
   );
 }
 
