@@ -4,8 +4,8 @@
 import React, { useState } from 'react'
 import SliderBtn from './SliderBtn'
 
-const Slider = (arr) => {
-
+const Slider = (props) => {
+  let { arr } = props
   const [slideIndex, setSlideIndex] = useState(0)
 
   //function to move to next slide
