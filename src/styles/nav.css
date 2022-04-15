@@ -7,7 +7,7 @@
 /* #EEEDED  offwhite */
 nav {
   position: fixed;
-  background: rgba(238, 237, 237, 0.459);
+  background: white;
   height: 60px;
   width: 100%;
   display: flex;
@@ -25,6 +25,7 @@ nav {
   max-width: 100px;
 }
 .nav-brand h1 {
+  font-weight: 325;
   color: #25102d;
   margin: 10px;
   font-size: 28px;
@@ -32,8 +33,6 @@ nav {
 }
 .nav-brandlink {
   text-decoration: none;
-}
-.nav-brandlink:hover {
   background-image: radial-gradient(
     #25102d,
     #902db4,
@@ -43,6 +42,16 @@ nav {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.nav-brandlink:hover {
+  background-image: radial-gradient(
+    #ffb135,
+    #4733ff,
+    #16075f,
+    #902db4,
+    #25102d
+  );
+  font-weight: 325;
 }
 .nav-options {
   display: flex;
