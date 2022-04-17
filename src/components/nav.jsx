@@ -20,25 +20,25 @@ export default function Navbar() {
     <nav className={navClass}>
       <div className="nav-brand">
         <img src={img} alt="Galaxy" />
-        <HashLink className="nav-brandlink " smooth to="/">
+        <HashLink className="nav-brandlink " smooth to="/#landing">
           <h1 className="nav-brandlink">Cosmos</h1>
         </HashLink>
       </div>
 
       <div className="nav-options">
-        <HashLink className="nav-hashlink" smooth to="/">
+        <HashLink className="nav-hashlink" smooth to="/#landing">
           <h1>Home</h1>
         </HashLink>
-        <HashLink className="nav-hashlink" smooth to="/">
+        <HashLink className="nav-hashlink" smooth to="/#catalog">
           <h1>Catalog</h1>
         </HashLink>
       </div>
 
       <div className="nav-icons">
-        <HashLink className="nav-hashlink" smooth to="/">
+        <HashLink className="nav-hashlink" smooth to="/login">
           <AccountCircleIcon fontSize="inherit"></AccountCircleIcon>
         </HashLink>
-        <HashLink className="nav-hashlink" smooth to="/">
+        <HashLink className="nav-hashlink" smooth to="/checkout">
           <ShoppingCartCheckoutIcon fontSize="inherit"></ShoppingCartCheckoutIcon>
         </HashLink>
       </div>
