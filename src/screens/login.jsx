@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import EditIcon from "@mui/icons-material/Edit";
 import KeyIcon from "@mui/icons-material/Key";
 export default function Login() {
+  let logUserin = (e) => {};
   return (
     <div className="login-main-container">
       <div className="login-card">
@@ -25,6 +26,7 @@ export default function Login() {
             Register
           </Button>
           <Button
+            onClick={logUserin}
             className="login-button"
             variant="outlined"
             startIcon={<KeyIcon fontSize="large"></KeyIcon>}
