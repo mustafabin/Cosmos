@@ -12,6 +12,7 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
+  transition: transform 0.25s;
 }
 
 .nav-brand {
@@ -88,6 +89,10 @@ nav {
 
   color: #25102d;
   font-size: 36px;
+}
+.nav--hidden {
+  transform: translateY(-60px);
+  box-shadow: none;
 }
 
 @media (max-width: 768px) {

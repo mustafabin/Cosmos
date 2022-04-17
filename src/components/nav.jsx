@@ -4,10 +4,20 @@ import "../styles/nav.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { HashLink } from "react-router-hash-link";
-
+import { useState } from "react";
 export default function Navbar() {
+  const [navClass, setNavClass] = useState("");
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+      setNavClass("nav--hidden");
+    } else {
+      setNavClass("");
+    }
+    lastScrollY = window.scrollY;
+  });
   return (
-    <nav>
+    <nav className={navClass}>
       <div className="nav-brand">
         <img src={img} alt="Galaxy" />
         <HashLink className="nav-brandlink " smooth to="/">
