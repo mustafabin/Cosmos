@@ -1,9 +1,38 @@
 import React from "react";
 import "../styles/Login.css";
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
+import KeyIcon from "@mui/icons-material/Key";
 export default function Login() {
   return (
     <div className="login-main-container">
-      <h1>login</h1>
+      <div className="login-card">
+        <h1>Sign In</h1>
+        <div className="login-email-field">
+          <p>Email : </p>
+          <input type="text" placeholder="Enter Email" />
+        </div>
+        <div className="login-password-field">
+          <p>Password : </p>
+          <input type="text" type="password" placeholder="Enter Password" />
+        </div>
+        <div className="login-buttons">
+          <Button
+            className="register-button"
+            variant="outlined"
+            startIcon={<EditIcon fontSize="large"></EditIcon>}
+          >
+            Register
+          </Button>
+          <Button
+            className="login-button"
+            variant="outlined"
+            startIcon={<KeyIcon fontSize="large"></KeyIcon>}
+          >
+            Login
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

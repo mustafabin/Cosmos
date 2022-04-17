@@ -2,7 +2,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100vw;
   height: 100vh;
+}
+.login-card {
+  border-radius: 30px;
+  box-shadow: 0 1px 2px 0 rgba(177, 20, 151, 0.609),
+    0 2px 6px 4px rgba(97, 7, 92, 0.294);
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  width: 40vw;
+  height: 50vw;
+  padding: 35px;
+  font-weight: 300;
+}
+.login-card button {
+  font-weight: 700;
+  border-color: rgb(190, 203, 246);
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+  font-size: 1.2rem;
+  background-color: rgb(255, 250, 255);
+  color: rgb(95, 38, 251);
+}
+.login-card button:hover {
+  color: rgb(255, 209, 135);
+  background-color: rgb(33, 10, 97);
+}
+.login-card .register-button:hover {
+  color: rgb(145, 255, 130);
+  background-color: rgb(33, 10, 97);
+}
+.login-card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.login-card h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.login-card input {
+  box-shadow: none;
+  border-color: rgb(247, 101, 4);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.login-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
