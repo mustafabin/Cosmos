@@ -19,10 +19,9 @@ const Landing = () => {
         ></video>
       </div>
       <div className="landing-content">
-        <h1 className="landing-h1">The Space Shop!</h1>
+        <h1 className="landing-h1">{state.name}</h1>
         <p className="landing-p">One Stop For All Your Intergalactic Needs!</p>
         <div className="landing-btn-wrap">
-          {/* add dynamic classes */}
           <HashLink smooth to="/#catalog">
             <button className="landing-btn">
               Catalog <ArrowDownwardIcon></ArrowDownwardIcon>

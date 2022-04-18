@@ -1,9 +1,7 @@
 const userReducer = (state = { name: "Guest" }, action) => {
   switch (action.type) {
     case "set":
-      return {
-        value: state,
-      };
+      return { name: action.payload };
     default:
       return state;
   }
