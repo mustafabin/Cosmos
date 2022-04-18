@@ -7,7 +7,7 @@ import { store } from "../state/store";
 
 export default function Login() {
   let logUserin = (e) => {
-    store.dispatch({ type: "set", payload: "test" });
+    store.dispatch({ type: "set", payload: { name: "test" } });
   };
   return (
     <div className="login-main-container">

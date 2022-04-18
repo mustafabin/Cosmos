@@ -5,7 +5,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
 const Landing = () => {
-  const state = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   return (
     <div className="landing-container">
       <div className="landing-bg">
@@ -19,7 +19,7 @@ const Landing = () => {
         ></video>
       </div>
       <div className="landing-content">
-        <h1 className="landing-h1">{state.name}</h1>
+        <h1 className="landing-h1">{user.name}</h1>
         <p className="landing-p">One Stop For All Your Intergalactic Needs!</p>
         <div className="landing-btn-wrap">
           <HashLink smooth to="/#catalog">
