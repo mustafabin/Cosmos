@@ -1,5 +1,12 @@
 const userReducer = (state = { name: "Guest" }, action) => {
-  return state;
+  switch (action.type) {
+    case "set":
+      return {
+        value: state,
+      };
+    default:
+      return state;
+  }
 };
 
 export default userReducer;

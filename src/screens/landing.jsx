@@ -1,17 +1,33 @@
 import React from "react";
+import "../styles/landing.css";
+import Video from "../media/video.mp4";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { useSelector } from "react-redux";
-
-export default function Landing() {
+const Landing = () => {
   const state = useSelector((state) => state.user);
   return (
-    <div className="Landing-main-container">
-      <div id="landing" className="App">
-        <h1>HELLO {state.name}</h1>
+    <div className="landing-container">
+      <div className="landing-bg">
+        <video
+          autoPlay
+          muted
+          loop
+          src={Video}
+          type="../media/video.mp4"
+          className="landing-bg-vid"
+        ></video>
       </div>
-      <div className="App"></div>
-      <div className="App"></div>
-      <div className="App"></div>
-      <div id="catalog" className="main"></div>
+      <div className="landing-content">
+        <h1 className="landing-h1">The Space Shop!</h1>
+        <p className="landing-p">One Stop For All Your Intergalactic Needs!</p>
+        <div className="landing-btn-wrap">
+          {/* add dynamic classes */}
+          <button className="landing-btn">
+            Catalog <ArrowDownwardIcon></ArrowDownwardIcon>
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
+export default Landing;

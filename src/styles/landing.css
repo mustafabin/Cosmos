@@ -1,0 +1,79 @@
+.landing-container {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  height: 800px;
+  position: relative;
+  z-index: 1;
+}
+.landing-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  overflow: hidden;
+}
+.landing-content {
+  z-index: 3;
+  max-width: 1200px;
+  position: absolute;
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-h1 {
+  color: #eeeded;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 2000;
+}
+.landing-p {
+  margin-top: 24px;
+  color: #eeeded;
+  font-size: 24px;
+  text-align: center;
+  max-width: 600px;
+}
+.landing-btn-wrap {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-btn {
+  border-radius: 50px;
+  background: #eeeded;
+  white-space: nowrap;
+  padding: 14px 48px;
+  color: #16075f;
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.landing-btn:hover {
+  background: #eeeded;
+  color: #902db4;
+  transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+.landing-btn img {
+  padding-left: 15px;
+  padding-top: 5px;
+  max-height: 20px;
+  max-width: 20px;
+  filter: brightness(0.9) invert(0.2) sepia(0.5) hue-rotate(0deg) saturate(100%);
+}
