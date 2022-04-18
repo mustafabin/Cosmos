@@ -48,6 +48,9 @@
   flex-direction: column;
   align-items: center;
 }
+.landing-btn-wrap a {
+  text-decoration: none;
+}
 .landing-btn {
   border-radius: 50px;
   background: #eeeded;
