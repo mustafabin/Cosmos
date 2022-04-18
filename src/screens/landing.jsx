@@ -45,7 +45,7 @@ const Landing = () => {
       </div>
       <div className="landing-content">
         <h1 className="landing-h1">
-          Hello <h1 className="landing-user-name">{user.name}</h1>
+          Hello, <h1 className="landing-user-name">{user.name}</h1>
         </h1>
         <p className="landing-p">One Stop For All Your Intergalactic Needs!</p>
         <div className="landing-btn-wrap">
