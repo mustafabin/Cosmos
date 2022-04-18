@@ -5,7 +5,10 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 export default function Navbar() {
+  const user = useSelector((state) => state.user);
   const [navClass, setNavClass] = useState("");
   let lastScrollY = window.scrollY;
   window.addEventListener("scroll", () => {

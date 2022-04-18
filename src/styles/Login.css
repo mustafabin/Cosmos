@@ -7,14 +7,16 @@
 }
 .login-card {
   border-radius: 30px;
-  box-shadow: 0 1px 2px 0 rgba(177, 20, 151, 0.609),
-    0 2px 6px 4px rgba(97, 7, 92, 0.294);
+  box-shadow: 0 1px 2px 0 rgba(53, 27, 138, 0.609),
+    0 2px 6px 1px rgba(17, 15, 117, 0.294);
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   display: flex;
   width: 30vw;
   height: 40vw;
+  min-height: 400px;
+  min-width: 350px;
   margin-top: 100px;
   padding: 35px;
   font-weight: 300;
@@ -46,8 +48,9 @@
   font-weight: 300;
 }
 .login-card input {
-  box-shadow: none;
-  border-color: rgb(247, 101, 4);
+  border-color: rgba(255, 232, 217, 0);
+  box-shadow: 0 1px 4px 0 rgba(53, 27, 138, 0.376),
+    0 2px 6px 0.5px rgba(17, 15, 117, 0.294);
   border-radius: 5px;
   padding: 10px;
   font-size: 1.2rem;
@@ -56,11 +59,4 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-  .login-card {
-    width: 50vw;
-    height: 65vw;
-  }
 }

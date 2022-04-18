@@ -4,8 +4,33 @@ import Video from "../media/video.mp4";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import axios from "axios";
+import { store } from "../state/store";
+
 const Landing = () => {
   const user = useSelector((state) => state.user);
+  let logUserin = async () => {
+    let token = localStorage.getItem("jwt_token");
+    console.log(token);
+    try {
+      const res = await axios.post(
+        "https://comos-backend.herokuapp.com/users/me",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      store.dispatch({ type: "set", payload: res.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    logUserin();
+  }, []);
   return (
     <div className="landing-container">
       <div className="landing-bg">
@@ -19,7 +44,7 @@ const Landing = () => {
         ></video>
       </div>
       <div className="landing-content">
-        <h1 className="landing-h1">{user.name}</h1>
+        <h1 className="landing-h1">Hello {user.name}</h1>
         <p className="landing-p">One Stop For All Your Intergalactic Needs!</p>
         <div className="landing-btn-wrap">
           <HashLink smooth to="/#catalog">
