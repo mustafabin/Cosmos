@@ -28,7 +28,7 @@ function Catalog() {
       <div className="catalog">
         {catalogState.map((product, i) => (
           <Link to={`/products/${product._id}`}>
-            <ProductCard key={i} product={product} />
+            <ProductCard key={i} product={product} index={i} />
           </Link>
         ))}
       </div>
