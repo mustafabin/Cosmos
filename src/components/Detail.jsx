@@ -8,12 +8,6 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { DetailsOutlined } from '@mui/icons-material';
 
 
-
-
-
-
-
-
 const Detail = () => {
   const [detail, setDetail] = useState({});
   const [rating, setRating] = useState(0)
