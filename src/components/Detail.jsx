@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Rating } from "@mui/material/";
 import "../styles/detail.css"
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { DetailsOutlined } from '@mui/icons-material';
 
 
 
@@ -15,6 +16,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Detail = () => {
   const [detail, setDetail] = useState({});
+  const [rating, setRating] = useState(0)
   let { id } = useParams()
 
   const fetchDetail = async () => {
@@ -29,6 +31,10 @@ const Detail = () => {
     fetchDetail();
   }, [id]);
 
+  useEffect(() => {
+    setRating(detail.rating)
+  }, [detail])
+
   return (
     <div className='detail-container'>
       <div className="detail-img-container">
@@ -39,15 +45,22 @@ const Detail = () => {
         {/* title */}
         <h2 className="detail-title">{detail.name}</h2>
         {/* price */}
-        <p className="detail-price">{detail.price}</p>
-        <div className="detail-warranty-wrap">
-          <p>Warranty!</p>
+        <p className="detail-price">${detail.price}</p>
+        <div className={detail.warrenty === true ? "detail-warranty-wrap" : "detail-warranty-wrap-gray"}>
+          <p>Warranty</p>
           <h4 className='detail-warranty'><CheckCircleIcon></CheckCircleIcon></h4>
         </div>
         <button className="detail-cart">Add To Cart</button>
         {/* description */}
         <p className="detail-description">{detail.description}</p>
-        <Rating name="detail-rating" value={detail.rating} readOnly />
+        <Rating
+          value={rating || null}
+          max={5}
+          precision={0.5}
+          size="large"
+          readOnly
+        />
+
       </div>
     </div>
   )

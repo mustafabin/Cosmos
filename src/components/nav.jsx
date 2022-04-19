@@ -29,9 +29,6 @@ export default function Navbar() {
 
     return color;
   };
-  useEffect(() => {
-    console.log(stringToColor(user.name));
-  }, []);
 
   const [navClass, setNavClass] = useState("");
   let lastScrollY = window.scrollY;
@@ -45,7 +42,6 @@ export default function Navbar() {
   });
   let grabLetter = () => {
     let nameArr = user.name.split(" ");
-    console.log(nameArr.length);
     if (nameArr.length < 2) {
       return nameArr[0].slice(0, 1).toUpperCase();
     } else {
