@@ -3,13 +3,8 @@ import React from "react";
 import "../styles/detail.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-
 const Detail = (props) => {
-
-  
   const { id } = useParams();
-  console.log(id);
-
 
   return (
     <div className="detail-container">

@@ -5,6 +5,22 @@
   width: 100vw;
   height: 100vh;
 }
+.register-card {
+  border-radius: 30px;
+  box-shadow: 0 1px 2px 0 rgba(53, 27, 138, 0.609),
+    0 2px 6px 1px rgba(17, 15, 117, 0.294);
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  width: 30vw;
+  height: 55vw;
+  min-height: 500px;
+  min-width: 350px;
+  margin-top: 100px;
+  padding: 35px;
+  font-weight: 300;
+}
 .login-card {
   border-radius: 30px;
   box-shadow: 0 1px 2px 0 rgba(53, 27, 138, 0.609),
@@ -21,7 +37,7 @@
   padding: 35px;
   font-weight: 300;
 }
-.login-card button {
+.card button {
   font-weight: 700;
   border-color: rgb(190, 203, 246);
   width: fit-content;
@@ -35,19 +51,19 @@
   color: rgb(255, 209, 135);
   background-color: rgb(33, 10, 97);
 }
-.login-card .register-button:hover {
+.card .register-button:hover {
   color: rgb(145, 255, 130);
   background-color: rgb(33, 10, 97);
 }
-.login-card p {
+.card p {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.login-card h1 {
+.card h1 {
   font-size: 2.5rem;
   font-weight: 300;
 }
-.login-card input {
+.card input {
   border-color: rgba(255, 232, 217, 0);
   box-shadow: 0 1px 4px 0 rgba(53, 27, 138, 0.376),
     0 2px 6px 0.5px rgba(17, 15, 117, 0.294);
@@ -59,4 +75,16 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.back-button:hover {
+  color: rgb(245, 192, 48);
+  background-color: rgb(33, 10, 97) !important;
+}
+@media (min-width: 768px) {
+  .register-card {
+    height: 500px;
+  }
+  .login-card {
+    height: 500px;
+  }
 }

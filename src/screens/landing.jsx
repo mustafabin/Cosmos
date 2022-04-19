@@ -13,7 +13,6 @@ const Landing = () => {
   const user = useSelector((state) => state.user);
   let logUserin = async () => {
     let token = localStorage.getItem("jwt_token");
-    console.log(token);
     try {
       const res = await axios.post(
         "https://comos-backend.herokuapp.com/users/me",

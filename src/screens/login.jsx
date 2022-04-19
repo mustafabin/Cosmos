@@ -24,9 +24,8 @@ export default function Login() {
         }
       );
       localStorage.setItem("jwt_token", res.data.token);
-
-      navigate("/");
       store.dispatch({ type: "set", payload: res.data });
+      navigate("/");
     } catch (error) {
       console.log("credentials invalid");
     }
@@ -34,7 +33,7 @@ export default function Login() {
 
   return (
     <div className="login-main-container">
-      <div className="login-card">
+      <div className="login-card card">
         <h1>Sign In</h1>
         <form ref={formRef}>
           <p>Email : </p>
@@ -46,7 +45,7 @@ export default function Login() {
 
         <div className="login-buttons">
           <Button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/register")}
             className="register-button"
             variant="outlined"
             startIcon={<EditIcon fontSize="large"></EditIcon>}
