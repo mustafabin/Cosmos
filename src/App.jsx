@@ -9,6 +9,7 @@ import Checkout from "./screens/checkout";
 import ProductDetail from "./components/Detail";
 import RegisterPage from "./screens/register.jsx";
 import AccountInfo from "./screens/accInfo";
+
 function App() {
   return (
     <>
