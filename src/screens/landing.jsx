@@ -33,7 +33,7 @@ const Landing = () => {
     logUserin();
   }, []);
   return (
-    <>
+    <div className="whole-landing-flex">
       <div className="landing-container">
         <div className="landing-bg">
           <video
@@ -61,8 +61,9 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      <div className="catalog-text">Catalog</div>
       <Catalog></Catalog>
-    </>
+    </div>
   );
 };
 export default Landing;

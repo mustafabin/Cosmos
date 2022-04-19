@@ -2,8 +2,10 @@ import React from 'react'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Rating } from "@mui/material/";
 import "../styles/detail.css"
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
 
 
 
@@ -44,6 +46,13 @@ const Detail = () => {
         <button className="detail-cart">Add To Cart</button>
         {/* description */}
         <p className="detail-description">{detail.description}</p>
+        <Rating
+          value={detail.rating}
+          max={5}
+          precision={0.1}
+          size="large"
+          readOnly
+        />
       </div>
     </div>
   )
