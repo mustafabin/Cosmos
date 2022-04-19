@@ -11,6 +11,10 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   let navigate = useNavigate();
   let formRef = useRef(null);
+  let register = () => {
+    console.log("here");
+    navigate("/");
+  };
   let logUserin = async () => {
     let inputs = formRef.current.elements;
     let email = inputs["email"].value;
@@ -46,7 +50,7 @@ export default function Login() {
 
         <div className="login-buttons">
           <Button
-            onClick={() => navigate("/")}
+            onClick={register}
             className="register-button"
             variant="outlined"
             startIcon={<EditIcon fontSize="large"></EditIcon>}
@@ -54,7 +58,7 @@ export default function Login() {
             Register
           </Button>
           <Button
-            onClick={logUserin}
+            onClick={register}
             className="login-button"
             variant="outlined"
             startIcon={<KeyIcon fontSize="large"></KeyIcon>}
