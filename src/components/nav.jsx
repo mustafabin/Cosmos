@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import Avatar from "@mui/material/Avatar";
 
 export default function Navbar() {
-  const [acc, setAcc] = useState(null);
   const user = useSelector((state) => state.user);
   let stringToColor = (string) => {
     let hash = 0;
@@ -30,6 +29,9 @@ export default function Navbar() {
 
     return color;
   };
+  useEffect(() => {
+    console.log(stringToColor(user.name));
+  }, []);
 
   const [navClass, setNavClass] = useState("");
   let lastScrollY = window.scrollY;
@@ -41,6 +43,36 @@ export default function Navbar() {
     }
     lastScrollY = window.scrollY;
   });
+  let grabLetter = () => {
+    let nameArr = user.name.split(" ");
+    console.log(nameArr.length);
+    if (nameArr.length < 2) {
+      return nameArr[0].slice(0, 1).toUpperCase();
+    } else {
+      return (
+        nameArr[0].slice(0, 1).toUpperCase() +
+        nameArr[1].slice(0, 1).toUpperCase()
+      );
+    }
+  };
+
+  let AccountIcon = () => {
+    if (!user.email) {
+      return (
+        <HashLink className="nav-hashlink" smooth to="/login">
+          <AccountCircleIcon fontSize="inherit"></AccountCircleIcon>
+        </HashLink>
+      );
+    } else {
+      return (
+        <HashLink className="nav-hashlink" smooth to="/account">
+          <Avatar sx={{ bgcolor: stringToColor(user.name) }}>
+            {grabLetter()}
+          </Avatar>
+        </HashLink>
+      );
+    }
+  };
   return (
     <nav className={navClass}>
       <div className="nav-brand">
@@ -60,9 +92,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-icons">
-        <HashLink className="nav-hashlink" smooth to="/login">
-          <AccountCircleIcon fontSize="inherit"></AccountCircleIcon>
-        </HashLink>
+        {AccountIcon()}
         <HashLink className="nav-hashlink" smooth to="/checkout">
           <ShoppingCartCheckoutIcon fontSize="inherit"></ShoppingCartCheckoutIcon>
         </HashLink>
