@@ -31,6 +31,9 @@
   font-weight: bolder;
   text-shadow: aqua;
 }
+.cardImage {
+  width: 300px;
+}
 @media (max-width: 950px) {
   .cardImage {
     width: 200px;
