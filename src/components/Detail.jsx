@@ -8,15 +8,16 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 const Detail = () => {
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState({});
   let { id } = useParams()
 
   const fetchDetail = async () => {
     let response = await axios.get(
-      "https://cosmos-shop.herokuapp.com/products/getById/:id"
+      `https://cosmos-shop.herokuapp.com/products/getById/${id}`
     );
     setDetail(response.data);
   };
+
 
   useEffect(() => {
     fetchDetail();
