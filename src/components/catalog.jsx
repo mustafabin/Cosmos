@@ -12,7 +12,6 @@ function Catalog() {
     let response = await axios.get(
       "https://cosmos-shop.herokuapp.com/products/allProducts"
     );
-    console.log("database returns", response.data[0]);
     setCatalogState(response.data);
   };
 

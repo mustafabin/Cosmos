@@ -3,7 +3,6 @@ import "../styles/ProductCard.css";
 
 function ProductCard(props) {
 
-  console.log(props.product.image)
   return (
     <div>
       <ul className="productCard">
