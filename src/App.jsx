@@ -2,13 +2,13 @@ import "./styles/App.css";
 import React from "react";
 import Navbar from "./components/nav.jsx";
 import { Routes, Route } from "react-router-dom";
-import Errorpage from "./screens/error";
-import LandingPage from "./screens/landing";
-import LoginPage from "./screens/login";
-import Checkout from "./screens/checkout";
-import ProductDetail from "./components/Detail";
+import Errorpage from "./screens/error.jsx";
+import LandingPage from "./screens/landing.jsx";
+import LoginPage from "./screens/login.jsx";
+import Checkout from "./screens/checkout.jsx";
+import ProductDetail from "./components/Detail.jsx";
 import RegisterPage from "./screens/register.jsx";
-import AccountInfo from "./screens/accInfo";
+import AccountInfo from "./screens/accInfo.jsx";
 
 function App() {
   return (
