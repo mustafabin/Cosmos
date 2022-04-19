@@ -8,7 +8,7 @@ import LoginPage from "./screens/login";
 import Checkout from "./screens/checkout";
 import ProductDetail from "./components/Detail";
 import RegisterPage from "./screens/register.jsx";
-
+import AccountInfo from "./screens/accInfo";
 function App() {
   return (
     <>
@@ -20,6 +20,7 @@ function App() {
           element={<ProductDetail></ProductDetail>}
         ></Route>
         <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+        <Route path="/account" element={<AccountInfo></AccountInfo>}></Route>
         <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="/checkout" element={<Checkout></Checkout>}></Route>
         <Route path="*" element={<Errorpage></Errorpage>}></Route>

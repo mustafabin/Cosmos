@@ -31,7 +31,7 @@ const Detail = () => {
       </div>
       <div className="detail-info-container">
         {/* title */}
-        <h2 className="detail-title">{detail.title}</h2>
+        <h2 className="detail-title">{detail.name}</h2>
         {/* price */}
         <p className="detail-price">{detail.price}</p>
         <div className="detail-warranty-wrap">
@@ -41,13 +41,7 @@ const Detail = () => {
         <button className="detail-cart">Add To Cart</button>
         {/* description */}
         <p className="detail-description">{detail.description}</p>
-        <Rating
-          value={detail.rating}
-          max={5}
-          precision={0.1}
-          size="large"
-          readOnly
-        />
+        <Rating name="detail-rating" value={detail.rating} readOnly />
       </div>
     </div>
   )

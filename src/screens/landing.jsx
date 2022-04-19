@@ -9,7 +9,6 @@ import axios from "axios";
 import Catalog from "../components/Catalog.jsx";
 import { store } from "../state/store";
 
-
 const Landing = () => {
   const user = useSelector((state) => state.user);
   let logUserin = async () => {
