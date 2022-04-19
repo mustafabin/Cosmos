@@ -67,7 +67,7 @@
   margin-right: 15px;
 }
 
-.detail-warranty-wrap-red {
+.detail-warranty-wrap-gray {
   color: gray;
   /* width: 14.6%; */
   height: 35px;
@@ -80,7 +80,7 @@
   margin-right: 15px;
 }
 
-.detail-warranty-wrap svg {
+.detail-warranty-wrap-gray svg {
   height: 35px;
   width: auto;
   display: inline;
@@ -98,7 +98,7 @@
 
 .detail-warranty-wrap-gray p {
   font-size: 18px;
-  padding-top: 2px;
+  padding-top: 5px;
   padding-right: 5px;
   margin-left: 1px;
   /* visibility: hidden; */
@@ -119,7 +119,7 @@
   height: 48px;
   text-transform: uppercase;
   width: 90%;
-  padding-top: 1em;
+  /* padding-top: 1em; */
   margin-top: 15px;
   cursor: pointer;
   margin-bottom: 5em;
