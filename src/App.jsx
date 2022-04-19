@@ -8,6 +8,7 @@ import LoginPage from "./screens/login";
 import Checkout from "./screens/checkout";
 import ProductDetail from "./components/Detail";
 import RegisterPage from "./screens/register.jsx";
+
 function App() {
   return (
     <>

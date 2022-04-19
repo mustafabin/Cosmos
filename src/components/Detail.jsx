@@ -7,12 +7,6 @@ import "../styles/detail.css"
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
-
-
-
-
-
-
 const Detail = () => {
   const [detail, setDetail] = useState([]);
   let { id } = useParams()
