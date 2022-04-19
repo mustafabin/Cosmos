@@ -8,10 +8,11 @@
 }
 
 .detail-img-container {
-  margin-top: 10px;
-  grid-column: 2;
-  height: 100%;
+  margin: auto;
+  grid-column: 1/3;
+  max-height: 65%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -44,15 +45,17 @@
 .detail-price {
   margin-bottom: 40px;
   padding-top: 10px;
+  font-size: 16px;
+  font-weight: 450;
   color: gray;
 }
 
-.detail-warranty-img {
+/* .detail-warranty-img {
   color: black;
   font-weight: 600;
   margin-top: auto;
   margin-bottom: auto;
-}
+} */
 
 .detail-warranty-wrap {
   color: green;
@@ -80,8 +83,14 @@
   margin-right: 15px;
 }
 
+.detail-warranty-wrap svg {
+  height: 32px;
+  width: auto;
+  display: inline;
+}
+
 .detail-warranty-wrap-gray svg {
-  height: 35px;
+  height: 32px;
   width: auto;
   display: inline;
 }
@@ -132,6 +141,7 @@
 
 .detail-description {
   font-size: 18px;
+  font-weight: 500;
   width: 65%;
   margin-bottom: 20px;
 }
