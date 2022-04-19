@@ -6,14 +6,31 @@ import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { HashLink } from "react-router-hash-link";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import Avatar from "@mui/material/Avatar";
 
 export default function Navbar() {
+  const [acc, setAcc] = useState(null);
   const user = useSelector((state) => state.user);
-  useEffect(() => {
-    if (user.email) {
-      console.log("does have emails");
+  let stringToColor = (string) => {
+    let hash = 0;
+    let i;
+
+    /* eslint-disable no-bitwise */
+    for (i = 0; i < string.length; i += 1) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash);
     }
-  }, [user]);
+
+    let color = "#";
+
+    for (i = 0; i < 3; i += 1) {
+      const value = (hash >> (i * 8)) & 0xff;
+      color += `00${value.toString(16)}`.slice(-2);
+    }
+    /* eslint-enable no-bitwise */
+
+    return color;
+  };
+
   const [navClass, setNavClass] = useState("");
   let lastScrollY = window.scrollY;
   window.addEventListener("scroll", () => {

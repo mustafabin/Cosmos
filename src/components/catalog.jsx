@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 function Catalog() {
   const [catalogState, setCatalogState] = useState([]);
   const [loaded, setLoaded] = useState("");
-
   //Query the DB for all products
   const queryDb = async () => {
     let response = await axios.get(
@@ -28,8 +27,8 @@ function Catalog() {
     <div className="catalog-background" id={loaded}>
       <div className="catalog">
         {catalogState.map((product, i) => (
-          <Link to={`/products/${product._id}`}>
-            <ProductCard key={i} product={product} index={i} />
+          <Link key={i} to={`/products/${product._id}`}>
+            <ProductCard key={i} product={product} />
           </Link>
         ))}
       </div>
