@@ -3,7 +3,7 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 import "../styles/Catalog.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //return product cards for X number of entries with props passing product info
 function Catalog() {
@@ -17,15 +17,13 @@ function Catalog() {
     setCatalogState(response.data);
   };
 
-
   //Lifecycle method where dbQuery is called
   useEffect(() => {
     queryDb();
   }, []);
 
-
   return (
-    <div className="catalog-background" id='catalog'>
+    <div className="catalog-background" id="catalog">
       <h1 className="catalogTitle">Catalog</h1>
       <div className="catalog">
         {catalogState.map((product, i) => (

@@ -6,9 +6,8 @@ import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
-import Catalog from "../components/Catalog";
+import Catalog from "../components/Catalog.jsx";
 import { store } from "../state/store";
-import Detail from "../components/Detail";
 const Landing = () => {
   const user = useSelector((state) => state.user);
   let logUserin = async () => {
@@ -61,7 +60,6 @@ const Landing = () => {
         </div>
       </div>
       <Catalog></Catalog>
-      <Detail></Detail>
     </>
   );
 };
