@@ -5,7 +5,7 @@
   align-items: center;
   padding: 0 30px;
   height: 110vh;
-  width: 96vw;
+  width: auto;
   position: relative;
   z-index: 1;
 }
