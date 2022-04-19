@@ -7,7 +7,7 @@ function ProductCard(props) {
     <div>
       <ul className="productCard">
         <li className="productCardItem">
-          <img className="cardImage" src={props.product.image} />
+          <img className="cardImage" src={props.product.image} alt="planetImage"/>
         </li>
         <li className="productCardItem">{props.product.name}</li>
         <li className="productCardItem">{"$"+props.product.price}</li>
