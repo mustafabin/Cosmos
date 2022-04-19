@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@300&display=swap');
+
 .detail-container {
   height: 100vh;
   width: 100vw;
@@ -14,6 +16,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: #EEEDED; */
+  /* height: 80%; */
 }
 
 .detail-img-container img {
@@ -96,23 +100,27 @@
 }
 
 .detail-warranty-wrap p {
-  font-size: 18px;
+  font-size: 20px;
   padding-top: 5px;
   padding-right: 5px;
   margin-left: 1px;
   /* visibility: hidden; */
   display: inline;
   font-weight: bolder;
+  /* font-family: 'Lobster', cursive; */
+  /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .detail-warranty-wrap-gray p {
-  font-size: 18px;
+  font-size: 20px;
   padding-top: 5px;
   padding-right: 5px;
   margin-left: 1px;
   /* visibility: hidden; */
   display: inline;
   font-weight: bolder;
+  /* font-family: 'Lobster', cursive; */
+  /* font-family: 'Ubuntu', sans-serif; */
 }
 
 
@@ -131,7 +139,7 @@
   /* padding-top: 1em; */
   margin-top: 15px;
   cursor: pointer;
-  margin-bottom: 5em;
+  margin-bottom: 30px;
 }
 
 .detail-cart:hover {
@@ -143,5 +151,7 @@
   font-size: 18px;
   font-weight: 500;
   width: 65%;
+  margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 2px;
 }
