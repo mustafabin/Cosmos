@@ -6,7 +6,7 @@ import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
-import Catalog from "../components/Catalog.jsx";
+import Catalog from "../components/catalog.jsx";
 import { store } from "../state/store";
 
 const Landing = () => {
