@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import React from "react";
-import Navbar from "./components/Nav.jsx";
+import Navbar from "./components/nav.jsx";
 import { Routes, Route } from "react-router-dom";
 import Errorpage from "./screens/error";
 import LandingPage from "./screens/landing";
