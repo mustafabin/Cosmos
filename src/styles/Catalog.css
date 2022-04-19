@@ -1,5 +1,7 @@
 .catalog-background {
   /* width */
+  display: flex;
+  justify-content: center;
   background-color: white;
 }
 .catalogTitle {
@@ -11,9 +13,11 @@
   padding: 0.5rem;
   margin: 0.5rem;
   display: flex;
+
+  max-width: 70vw;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 .catalog a {
   text-decoration: none;
@@ -21,4 +25,9 @@
 }
 .catalog a:visited {
   color: black;
+}
+.catalog-text {
+  letter-spacing: 2px;
+  font-size: 3rem;
+  align-self: center;
 }
