@@ -1,37 +1,33 @@
-import React from 'react'
+import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "@mui/material/";
-import "../styles/detail.css"
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { DetailsOutlined } from '@mui/icons-material';
-
-
+import "../styles/detail.css";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Detail = () => {
   const [detail, setDetail] = useState({});
-  const [rating, setRating] = useState(0)
-  let { id } = useParams()
+  const [rating, setRating] = useState(0);
+  let { id } = useParams();
 
   const fetchDetail = async () => {
     let response = await axios.get(
-      `https://cosmos-shop.herokuapp.com/products/getById/${id}`
+      `https://comos-backend.herokuapp.com/products/getById/${id}`
     );
     setDetail(response.data);
   };
-
 
   useEffect(() => {
     fetchDetail();
   }, [id]);
 
   useEffect(() => {
-    setRating(detail.rating)
-  }, [detail])
+    setRating(detail.rating);
+  }, [detail]);
 
   return (
-    <div className='detail-container'>
+    <div className="detail-container">
       <div className="detail-img-container">
         {/* image */}
         <img src={detail.image} alt="" />
@@ -41,9 +37,17 @@ const Detail = () => {
         <h2 className="detail-title">{detail.name}</h2>
         {/* price */}
         <p className="detail-price">${detail.price}</p>
-        <div className={detail.warrenty === true ? "detail-warranty-wrap" : "detail-warranty-wrap-gray"}>
+        <div
+          className={
+            detail.warrenty === true
+              ? "detail-warranty-wrap"
+              : "detail-warranty-wrap-gray"
+          }
+        >
           <p>Warranty</p>
-          <h4 className='detail-warranty'><CheckCircleIcon></CheckCircleIcon></h4>
+          <h4 className="detail-warranty">
+            <CheckCircleIcon></CheckCircleIcon>
+          </h4>
         </div>
         <button className="detail-cart">Add To Cart</button>
         {/* description */}
@@ -55,10 +59,9 @@ const Detail = () => {
           size="large"
           readOnly
         />
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;

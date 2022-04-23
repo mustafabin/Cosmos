@@ -12,7 +12,7 @@ function Catalog() {
   //Query the DB for all products
   const queryDb = async () => {
     let response = await axios.get(
-      "https://cosmos-shop.herokuapp.com/products/allProducts"
+      "https://comos-backend.herokuapp.com/products/allProducts"
     );
     setCatalogState(response.data);
     setLoaded("catalog");
