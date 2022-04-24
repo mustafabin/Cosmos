@@ -31,7 +31,7 @@ export default function Checkout() {
   //updates the totals
   useEffect(() => {
     let placeHolder = 0;
-    if (!cart)
+    if (cart)
       cart.forEach((item) => {
         placeHolder += item.price * item.quantity;
       });
