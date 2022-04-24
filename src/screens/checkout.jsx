@@ -9,22 +9,25 @@ export default function Checkout() {
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
-  let placeHolder = 0;
+
   let checkoutContent = () => {
     let cartArr = JSON.parse(localStorage.getItem("cart"));
     if (cartArr) {
       setContent(
         cartArr.map((item, i) => {
-          // placeHolder += item.price * item.quantity;
-          setSubtotal((prev) => item.price * item.quantity + prev);
+          //setSubtotal((prev) => item.price * item.quantity + prev);
           return <CheckoutCard key={i} planet={item}></CheckoutCard>;
         })
       );
     }
   };
   useEffect(() => {
-    console.log(placeHolder);
-    // setSubtotal(placeHolder);
+    let placeHolder = 0;
+    let cartArr = JSON.parse(localStorage.getItem("cart"));
+    cartArr.forEach((item) => {
+      placeHolder += item.price * item.quantity;
+    });
+    setSubtotal(placeHolder);
   }, [content]);
   useEffect(() => {
     checkoutContent();
