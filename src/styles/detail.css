@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@300&display=swap");
 
 .detail-container {
   height: 100vh;
@@ -24,7 +24,6 @@
   max-width: 80%;
   max-height: 80%;
   border-radius: 10%;
-
 }
 
 .detail-info-container {
@@ -123,28 +122,33 @@
   /* font-family: 'Ubuntu', sans-serif; */
 }
 
-
 .detail-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 0px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5em;
   letter-spacing: 0.15em;
   font-weight: 500;
   background-color: #000;
-  color: #fff;
+  color: #ffff;
   text-align: center;
   height: 48px;
   text-transform: uppercase;
   width: 90%;
-  /* padding-top: 1em; */
   margin-top: 15px;
   cursor: pointer;
   margin-bottom: 30px;
+  transition: all ease 0.25s;
+  border-radius: 10px;
 }
 
 .detail-cart:hover {
   background-color: #902db4;
-  transition: ease-in-out 0.2s;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 20px;
 }
 
 .detail-description {

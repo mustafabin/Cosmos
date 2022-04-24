@@ -25,17 +25,28 @@ const Detail = () => {
   useEffect(() => {
     setRating(detail.rating);
   }, [detail]);
-
+  let addToCart = () => {
+    let isDupe = false;
+    let currentCart = JSON.parse(localStorage.getItem("cart"));
+    if (!currentCart)
+      return localStorage.setItem("cart", JSON.stringify([detail]));
+    currentCart.forEach((planet) => {
+      if (planet._id == detail._id) {
+        planet.quantity++;
+        isDupe = true;
+      }
+    });
+    if (!isDupe) currentCart.push(detail);
+    localStorage.setItem("cart", JSON.stringify(currentCart));
+  };
   return (
     <div className="detail-container">
       <div className="detail-img-container">
-        {/* image */}
         <img src={detail.image} alt="" />
       </div>
       <div className="detail-info-container">
-        {/* title */}
         <h2 className="detail-title">{detail.name}</h2>
-        {/* price */}
+
         <p className="detail-price">${detail.price}</p>
         <div
           className={
@@ -49,8 +60,9 @@ const Detail = () => {
             <CheckCircleIcon></CheckCircleIcon>
           </h4>
         </div>
-        <button className="detail-cart">Add To Cart</button>
-        {/* description */}
+        <div onClick={addToCart} className="detail-cart">
+          Add To Cart
+        </div>
         <p className="detail-description">{detail.description}</p>
         <Rating
           value={rating || null}

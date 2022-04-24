@@ -2,7 +2,104 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100vw;
   height: 100vh;
+}
+.checkout-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-display {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  min-width: 400px;
+  box-shadow: 0 0px 1px 0 rgba(94, 27, 138, 0.609),
+    0 1px 5px 1px rgba(3, 58, 9, 0.212);
+  border-radius: 10px;
+  margin: 15px;
+  padding: 25px;
+}
+.checkout-display h3 {
+  align-self: center;
+  padding: 5vw;
+}
+.checkout-card {
+  margin-bottom: 35px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 0px 2px 0 rgba(94, 27, 138, 0.609),
+    0 2px 6px 1px rgba(117, 15, 15, 0.294);
+}
+.checkout-card-details {
+  width: 400px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 10px;
+}
+.checkout-card-details h1 {
+  font-size: 1.6rem;
+  padding: 5px;
+}
+.checkout-card-details p {
+  padding: 5px;
+  font-size: 0.9rem;
+}
+.checkout-card-bottom p {
+  font-size: 1.4rem;
+  padding: 10px;
+  margin-left: 20px;
+  color: rgb(22, 114, 22);
+}
+.checkout-details {
+  margin: 15px;
+  padding: 10px;
+  align-self: flex-start;
+  border: 1px solid red;
+}
+.checkout-card-image {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+.checkout-card-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.checkout-card-bottom h1 {
+  font-size: 1rem;
+}
+.checkout-card-bottom h2 {
+  font-size: 1.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  background-color: rgb(26, 26, 92);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.171),
+    0 2px 6px 2px rgb(60 64 67 / 13%);
+  transition: all ease 0.5s;
+}
+.checkout-card-bottom h2:hover {
+  border-radius: 10px;
+  color: rgb(1, 99, 255);
+  background-color: rgba(169, 173, 240, 0.555);
+}
+@media (max-width: 1000px) {
+  .checkout-details {
+    align-self: center;
+  }
+  .checkout-flex-container {
+    flex-direction: column;
+  }
 }
