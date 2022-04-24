@@ -35,15 +35,15 @@ export default function Checkout() {
       cart.forEach((item) => {
         placeHolder += item.price * item.quantity;
       });
-    setSubtotal(placeHolder);
+    setSubtotal(Math.round(placeHolder));
   }, [content]);
   //once subtotal changes update tax
   useEffect(() => {
-    setTax(subtotal * 0.09);
+    setTax(Math.round(subtotal * 0.09));
   }, [subtotal]);
   //update total once tax changes
   useEffect(() => {
-    setTotal(tax + subtotal);
+    setTotal(Math.round(tax + subtotal));
   }, [tax]);
 
   useEffect(() => {

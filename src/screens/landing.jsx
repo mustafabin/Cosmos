@@ -29,7 +29,8 @@ const Landing = () => {
     }
   };
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify([]));
+    if (!localStorage.getItem("cart"))
+      localStorage.setItem("cart", JSON.stringify([]));
     logUserin();
   }, []);
   return (
