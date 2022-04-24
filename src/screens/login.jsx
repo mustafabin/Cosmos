@@ -4,12 +4,14 @@ import Button from "@mui/material/Button";
 import EditIcon from "@mui/icons-material/Edit";
 import KeyIcon from "@mui/icons-material/Key";
 import { store } from "../state/store";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   let navigate = useNavigate();
+  const [errorText, setErrorText] = useState("");
+  const [errorClass, setErrorClass] = useState("");
   let formRef = useRef(null);
   let logUserin = async () => {
     let inputs = formRef.current.elements;
@@ -27,7 +29,8 @@ export default function Login() {
       store.dispatch({ type: "set", payload: res.data });
       navigate("/");
     } catch (error) {
-      console.log("credentials invalid");
+      setErrorClass("login-register-error");
+      setErrorText("Invaild username or password");
     }
   };
 
@@ -36,11 +39,24 @@ export default function Login() {
       <div className="login-card card">
         <h1>Sign In</h1>
         <form ref={formRef}>
+          <h3>{errorText}</h3>
           <p>Email : </p>
-          <input type="text" name="email" placeholder="Enter Email" />
+          <input
+            className={errorClass}
+            onClick={() => setErrorText("")}
+            type="text"
+            name="email"
+            placeholder="Enter Email"
+          />
 
           <p>Password : </p>
-          <input name="password" type="password" placeholder="Enter Password" />
+          <input
+            className={errorClass}
+            onClick={() => setErrorText("")}
+            name="password"
+            type="password"
+            placeholder="Enter Password"
+          />
         </form>
 
         <div className="login-buttons">
