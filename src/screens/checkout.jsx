@@ -9,7 +9,7 @@ export default function Checkout() {
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(subtotal * 0.09);
   const [total, setTotal] = useState(subtotal + tax);
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+  const [cart, setCart] = useState([]);
   //this function populates the checkout aslong as there is items in the cart
   let checkoutContent = () => {
     cart.length !== 0
