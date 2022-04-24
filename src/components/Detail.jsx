@@ -31,7 +31,7 @@ const Detail = () => {
     if (!currentCart)
       return localStorage.setItem("cart", JSON.stringify([detail]));
     currentCart.forEach((planet) => {
-      if (planet._id == detail._id) {
+      if (planet._id === detail._id) {
         planet.quantity++;
         isDupe = true;
       }

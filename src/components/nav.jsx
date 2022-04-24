@@ -4,7 +4,7 @@ import "../styles/nav.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { HashLink } from "react-router-hash-link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import Avatar from "@mui/material/Avatar";
 

@@ -7,47 +7,67 @@ import Divider from "@mui/material/Divider";
 export default function Checkout() {
   const [content, setContent] = useState(<h3> No items in Checkout</h3>);
   const [subtotal, setSubtotal] = useState(0);
-  const [tax, setTax] = useState(0);
-  const [total, setTotal] = useState(0);
-
+  const [tax, setTax] = useState(subtotal * 0.09);
+  const [total, setTotal] = useState(subtotal + tax);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
   let checkoutContent = () => {
-    let cartArr = JSON.parse(localStorage.getItem("cart"));
-    if (cartArr) {
-      setContent(
-        cartArr.map((item, i) => {
-          //setSubtotal((prev) => item.price * item.quantity + prev);
-          return <CheckoutCard key={i} planet={item}></CheckoutCard>;
-        })
-      );
-    }
+    cart.length !== 0
+      ? setContent(
+          cart.map((item, i) => {
+            return (
+              <CheckoutCard
+                key={i}
+                index={i}
+                cart={cart}
+                setCart={setCart}
+                planet={item}
+              ></CheckoutCard>
+            );
+          })
+        )
+      : setContent(<h3> No items in Checkout</h3>);
   };
+  //updates the totals
   useEffect(() => {
     let placeHolder = 0;
-    let cartArr = JSON.parse(localStorage.getItem("cart"));
-    cartArr.forEach((item) => {
+    cart.forEach((item) => {
       placeHolder += item.price * item.quantity;
     });
     setSubtotal(placeHolder);
   }, [content]);
+  //once subtotal changes update tax
   useEffect(() => {
+    setTax(subtotal * 0.09);
+  }, [subtotal]);
+  //update total once tax changes
+  useEffect(() => {
+    setTotal(tax + subtotal);
+  }, [tax]);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
     checkoutContent();
-  }, []);
+  }, [cart]);
   return (
     <div className="checkout-main-container">
       <div className="checkout-flex-container">
         <div className="checkout-display">{content}</div>
         <div className="checkout-details">
+          <h3>
+            Subtotal: <span>{subtotal}</span>
+          </h3>
+          <h3>
+            Tax: <span>{tax}</span>
+          </h3>
+          <Divider></Divider>
+          <h2>
+            Total: <span>{total}</span>
+          </h2>
           <div className="checkout-button">
-            <h3>
-              Subtotal: <span>{subtotal}</span>
-            </h3>
-            <h3>
-              Tax: <span>{tax}</span>
-            </h3>
-            <h2>
-              Total: <span>{total}</span>
-            </h2>
-            <button>Proceed to Payment</button>
+            <p>No Payment</p>
+            <span aria-label="hiding" role="img">
+              🙈
+            </span>
           </div>
         </div>
       </div>

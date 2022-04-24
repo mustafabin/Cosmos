@@ -22,14 +22,24 @@ const CheckoutCard = (props) => {
 
     return color;
   };
-  let { planet } = props;
+  let { planet, setCart, cart, index } = props;
   const [quantity, setQuantity] = useState(planet.quantity);
   let decrement = () => {
-    if (quantity > 1) setQuantity((prev) => prev - 1);
+    if (quantity > 0) setQuantity((prev) => prev - 1);
   };
   let increment = () => {
     if (quantity < 9) setQuantity((prev) => prev + 1);
   };
+  let updateValues = async () => {
+    cart[index].quantity = quantity;
+    setCart([...cart]);
+  };
+  useEffect(() => {
+    //if quantity hits 0 delete item else update values
+    quantity === 0
+      ? setCart(cart.filter((item) => item._id !== planet._id))
+      : updateValues();
+  }, [quantity]);
   return (
     <div className="checkout-card">
       <img
