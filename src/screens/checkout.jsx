@@ -10,6 +10,7 @@ export default function Checkout() {
   const [tax, setTax] = useState(subtotal * 0.09);
   const [total, setTotal] = useState(subtotal + tax);
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+  //this function populates the checkout aslong as there is items in the cart
   let checkoutContent = () => {
     cart.length !== 0
       ? setContent(
@@ -30,9 +31,10 @@ export default function Checkout() {
   //updates the totals
   useEffect(() => {
     let placeHolder = 0;
-    cart.forEach((item) => {
-      placeHolder += item.price * item.quantity;
-    });
+    if (!cart)
+      cart.forEach((item) => {
+        placeHolder += item.price * item.quantity;
+      });
     setSubtotal(placeHolder);
   }, [content]);
   //once subtotal changes update tax

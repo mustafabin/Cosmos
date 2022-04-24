@@ -8,6 +8,7 @@ import gif from "../media/loading.gif";
 //return product cards for X number of entries with props passing product info
 function Catalog() {
   const [catalogState, setCatalogState] = useState([]);
+  //inital state is a falsy value so we can put up a loading screen until the content loads
   const [loaded, setLoaded] = useState(null);
   //Query the DB for all products
   const queryDb = async () => {
