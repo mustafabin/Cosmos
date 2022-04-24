@@ -29,6 +29,7 @@ const Landing = () => {
     }
   };
   useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify([]));
     logUserin();
   }, []);
   return (
