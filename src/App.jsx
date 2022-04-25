@@ -25,6 +25,7 @@ function App() {
         <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="/checkout" element={<Checkout></Checkout>}></Route>
         <Route path="*" element={<Errorpage></Errorpage>}></Route>
+        <Route path="/err" element={<Errorpage></Errorpage>}></Route>
       </Routes>
     </>
   );

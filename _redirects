@@ -1,0 +1,8 @@
+/products /
+/products/:id /products/:id
+/login /login
+/account /account
+/register /register
+/checkout /checkout
+/* /err 404
+/* /* 404
