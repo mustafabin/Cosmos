@@ -24,6 +24,7 @@ export default function Checkout() {
                 cart={cart}
                 setCart={setCart}
                 planet={item}
+                amount={item.quantity}
               ></CheckoutCard>
             );
           })
@@ -41,7 +42,7 @@ export default function Checkout() {
   }, [content]);
   //once subtotal changes update tax
   useEffect(() => {
-    setTax((Math.round(subtotal * 100) / 100) * 0.09);
+    setTax(subtotal * 0.09);
   }, [subtotal]);
   //update total once tax changes
   useEffect(() => {
@@ -61,11 +62,11 @@ export default function Checkout() {
             Subtotal: <span>{subtotal}</span>
           </h3>
           <h3>
-            Tax: <span>{tax}</span>
+            Tax: <span>{tax.toFixed(2)}</span>
           </h3>
           <Divider></Divider>
           <h2>
-            Total: <span>{total}</span>
+            Total: <span>{total.toFixed(2)}</span>
           </h2>
           <div className="checkout-button">
             <p>No Payment</p>

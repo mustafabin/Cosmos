@@ -22,8 +22,8 @@ const CheckoutCard = (props) => {
 
     return color;
   };
-  let { planet, setCart, cart, index } = props;
-  const [quantity, setQuantity] = useState(planet.quantity);
+  let { planet, setCart, cart, index, amount } = props;
+  const [quantity, setQuantity] = useState(amount);
   let decrement = () => {
     if (quantity > 0) setQuantity((prev) => prev - 1);
   };
@@ -59,7 +59,7 @@ const CheckoutCard = (props) => {
         <p>{planet.description.slice(0, 80) + " . . . "}</p>
         <div className="checkout-card-bottom">
           <h2 onClick={decrement}>-</h2>
-          <h1>{quantity}</h1>
+          <h1>{amount}</h1>
           <h2 onClick={increment}>+</h2>
           <p>{"$" + planet.price}</p>
         </div>

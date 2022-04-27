@@ -14,7 +14,7 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 75vh;
   min-width: 400px;
   box-shadow: 0 0px 1px 0 rgba(94, 27, 138, 0.609),
     0 1px 5px 1px rgba(3, 58, 9, 0.212);
@@ -79,7 +79,7 @@
   font-weight: 700;
 
   font-size: 1.6rem;
-  color: rgb(119, 30, 89);
+  color: rgb(163, 46, 91);
 }
 .checkout-button {
   display: flex;
@@ -118,6 +118,7 @@
   transition: all ease 0.5s;
 }
 .checkout-card-bottom h2:hover {
+  cursor: pointer;
   border-radius: 10px;
   color: rgb(1, 99, 255);
   background-color: rgba(169, 173, 240, 0.555);
@@ -128,5 +129,17 @@
   }
   .checkout-flex-container {
     flex-direction: column;
+  }
+  .checkout-display {
+    height: 80vh;
+    margin-top: 20vh;
+  }
+}
+@media (max-width: 600px) {
+  .checkout-display {
+    width: 80vw;
+  }
+  .checkout-card-details p {
+    font-size: 0.8rem;
   }
 }
